@@ -44,8 +44,8 @@ export default function KitchenBoard({
           table: "orders",
           filter: `location_id=eq.${locationId}`,
         },
-        async (payload) => {
-          const id = (payload.new as { id: string }).id;
+        async (payload: { new: { id: string } }) => {
+          const id = payload.new.id;
           const full = await fetchOrder(id);
           if (!full) return;
           setOrders((prev) => {
@@ -72,8 +72,8 @@ export default function KitchenBoard({
           table: "orders",
           filter: `location_id=eq.${locationId}`,
         },
-        async (payload) => {
-          const id = (payload.new as { id: string }).id;
+        async (payload: { new: { id: string } }) => {
+          const id = payload.new.id;
           const full = await fetchOrder(id);
           if (!full) return;
           setOrders((prev) =>

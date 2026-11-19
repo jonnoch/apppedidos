@@ -50,6 +50,16 @@ export async function loadMenu(
     ]);
 
   if (locationRes.error || !locationRes.data) {
+    // Diagnóstico: aparece en los logs de la función en Vercel.
+    console.error("[loadMenu] No se pudo cargar la sede", {
+      locationId,
+      hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+      hasAnonKey: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      error: locationRes.error?.message,
+      code: locationRes.error?.code,
+      details: locationRes.error?.details,
+      hint: locationRes.error?.hint,
+    });
     return null;
   }
 

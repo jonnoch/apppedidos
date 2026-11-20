@@ -106,3 +106,5 @@ Un pedido nuevo aparece en segundos y dispara una **alerta de sonido**
 ## Fuera de alcance de v1
 Pagos en línea, cuentas de cliente, turnos, inventario, fidelización, panel
 multi-sede, apps nativas y APIs de mapas/distancia.
+
+<!-- deploy: re-trigger build tras volver el repositorio a público -->
